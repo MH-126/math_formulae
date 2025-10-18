@@ -7,13 +7,28 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Top lapis-lazuli strip */
-   .lapis-strip {
+  .lapis-strip {
   width: 100%;
-  height: 50px;
-  background-color: white;          /* white background */
-  border-bottom: 3px solid #4169E1; /* thin royal blue outline at the bottom */
+  background-image: url('ss.jpg'); /* keep your uploaded image */
+  background-size: 100% auto;      /* full width, height adjusts automatically */
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
 }
+
+/* Heading text with white color and thin blue outline */
+.site-heading {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: normal;           /* no fixed height; aligns naturally */
+  color: white;                  /* white text */
+  -webkit-text-stroke: 1px #4169E1; /* thin royal blue outline */
+  text-stroke: 1px #4169E1;         /* fallback */
+}
+
 
 
     /* Site heading text on top-left */
