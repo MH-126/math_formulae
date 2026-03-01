@@ -13,6 +13,33 @@
     Differentiation (Intro)
   </h1>
 
+  <!-- Rules of Differentiation -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-yellow-500">
+    <h2 class="text-xl font-semibold mb-4">Rules of Differentiation</h2>
+
+    <ul class="space-y-3 font-mono">
+      <li>d/dx(u ± v) = du/dx ± dv/dx</li>
+      <li>d/dx(uv) = v·du/dx + u·dv/dx</li>
+      <li>d/dx(u/v) = (v·du/dx − u·dv/dx)/v²</li>
+    </ul>
+
+    <div class="mt-4 bg-yellow-50 p-3 rounded">
+      <strong>Chain Rule:</strong><br>
+      d/dx[f(g(x))] = f′(g(x)) · g′(x)<br>
+      <span class="text-sm text-gray-700">
+        Used when one function is inside another.
+      </span>
+    </div>
+
+    <div class="mt-3 bg-yellow-50 p-3 rounded">
+      <strong>Variable Power Rule:</strong><br>
+      d/dx(mⁿ) = mⁿ · d/dx(n ln m)<br>
+      <span class="text-sm text-gray-700">
+        Used when both base and exponent depend on x.
+      </span>
+    </div>
+  </section>
+
   <!-- Standard Derivatives -->
   <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-blue-500">
     <h2 class="text-xl font-semibold mb-4">Standard Derivatives</h2>
@@ -47,31 +74,18 @@
     </ul>
   </section>
 
-  <!-- Calculus Rules -->
-  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-yellow-500">
-    <h2 class="text-xl font-semibold mb-4">Rules of Differentiation</h2>
+  <!-- Hyperbolic -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-teal-500">
+    <h2 class="text-xl font-semibold mb-4">Hyperbolic Function Derivatives</h2>
 
-    <ul class="space-y-3 font-mono">
-      <li>d/dx(u ± v) = du/dx ± dv/dx</li>
-      <li>d/dx(uv) = v·du/dx + u·dv/dx</li>
-      <li>d/dx(u/v) = (v·du/dx − u·dv/dx)/v²</li>
+    <ul class="space-y-2 font-mono">
+      <li>d/dx(sinh x) = cosh x</li>
+      <li>d/dx(cosh x) = sinh x</li>
+      <li>d/dx(tanh x) = sech²x</li>
+      <li>d/dx(coth x) = −csch²x</li>
+      <li>d/dx(sech x) = −sech x·tanh x</li>
+      <li>d/dx(csch x) = −csch x·coth x</li>
     </ul>
-
-    <div class="mt-4 bg-yellow-50 p-3 rounded">
-      <strong>Chain Rule:</strong><br>
-      d/dx[f(g(x))] = f′(g(x))·g′(x)<br>
-      <span class="text-sm text-gray-700">
-        Used when one function is inside another.
-      </span>
-    </div>
-
-    <div class="mt-3 bg-yellow-50 p-3 rounded">
-      <strong>Variable Power Rule:</strong><br>
-      d/dx(mⁿ) = mⁿ · d/dx(n ln m)<br>
-      <span class="text-sm text-gray-700">
-        Used when both base and exponent depend on x.
-      </span>
-    </div>
   </section>
 
   <!-- Tangent and Normal -->
@@ -84,32 +98,10 @@
 
     <ul class="space-y-2 font-mono">
       <li>Tangent: y − y₁ = (dy/dx)(x − x₁)</li>
-      <li>Normal: y − y₁ = −1/(dy/dx)(x − x₁)</li>
+      <li>Normal: y − y₁ = (−1/(dy/dx))(x − x₁)</li>
       <li>Parallel to x-axis → dy/dx = 0</li>
       <li>Equal angles with axes → dy/dx = ±1</li>
     </ul>
-  </section>
-
-  <!-- Hyperbolic -->
-  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-teal-500">
-    <h2 class="text-xl font-semibold mb-4">Hyperbolic Function Derivatives</h2>
-
-    <table class="w-full border-collapse">
-      <thead>
-        <tr class="bg-gray-200">
-          <th class="p-2 border">Function</th>
-          <th class="p-2 border">Derivative</th>
-        </tr>
-      </thead>
-      <tbody class="font-mono">
-        <tr><td class="p-2 border">sinh x</td><td class="p-2 border">cosh x</td></tr>
-        <tr><td class="p-2 border">cosh x</td><td class="p-2 border">sinh x</td></tr>
-        <tr><td class="p-2 border">tanh x</td><td class="p-2 border">sech²x</td></tr>
-        <tr><td class="p-2 border">coth x</td><td class="p-2 border">−csch²x</td></tr>
-        <tr><td class="p-2 border">sech x</td><td class="p-2 border">−sech x·tanh x</td></tr>
-        <tr><td class="p-2 border">csch x</td><td class="p-2 border">−csch x·coth x</td></tr>
-      </tbody>
-    </table>
   </section>
 
 </body>
