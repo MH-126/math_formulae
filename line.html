@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordinate Geometry – Lines & Areas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 p-8">
+
+  <h1 class="text-3xl font-bold text-blue-800 mb-8">
+    Coordinate Geometry – Lines & Areas
+  </h1>
+
+  <!-- Section 1: Coordinates of Points -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-blue-500">
+    <h2 class="text-xl font-semibold mb-4">Coordinates of Points</h2>
+    <p class="font-mono">
+      General points:<br>
+      A(x₁, y₁), B(x₂, y₂), C(x₃, y₃), D(x₄, y₄), E(x₅, y₅)
+    </p>
+  </section>
+
+  <!-- Section 2: Area of Triangle -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-green-500">
+    <h2 class="text-xl font-semibold mb-4">Area of Triangle</h2>
+    <p class="font-mono mb-3">
+      Determinant form:<br>
+      Area = 1/2 * | x₁ y₁ 1<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;x₂ y₂ 1<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;x₃ y₃ 1 |
+    </p>
+    <p class="font-mono mb-3">
+      Shortcut formula:<br>
+      Area = 1/2 * [x₁(y₂ − y₃) + x₂(y₃ − y₁) + x₃(y₁ − y₂)]
+    </p>
+    <p class="text-sm text-gray-700">Collinearity condition: Area = 0 → points are collinear</p>
+    <img src="line1.png" alt="Triangle ABC diagram" class="mt-3 rounded shadow">
+  </section>
+
+  <!-- Section 3: Area of Quadrilateral -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-yellow-500">
+    <h2 class="text-xl font-semibold mb-4">Area of Quadrilateral</h2>
+    <p class="font-mono">
+      Area = 1/2 * | (x₁y₂ + x₂y₃ + x₃y₄ + x₄y₁) − (y₁x₂ + y₂x₃ + y₃x₄ + y₄x₁) |
+    </p>
+    <img src="line2.png" alt="Quadrilateral ABCD diagram" class="mt-3 rounded shadow">
+  </section>
+
+  <!-- Section 4: Area of Pentagon -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-purple-500">
+    <h2 class="text-xl font-semibold mb-4">Area of Pentagon</h2>
+    <p class="font-mono">
+      Area = 1/2 * | x₁ x₂ x₃ x₄ x₅ x₁<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;y₁ y₂ y₃ y₄ y₅ y₁ |
+    </p>
+    <img src="line3.png" alt="Pentagon ABCDE diagram" class="mt-3 rounded shadow">
+  </section>
+
+  <!-- Section 5: Equations of Lines -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-red-500">
+    <h2 class="text-xl font-semibold mb-4">Equations of Lines</h2>
+    <p class="font-mono mb-3">General equation: ax + by + c = 0</p>
+    <ul class="space-y-2 font-mono">
+      <li>X-axis: y = 0</li>
+      <li>Y-axis: x = 0</li>
+      <li>Line parallel to X-axis: y = b</li>
+      <li>Line parallel to Y-axis: x = a</li>
+      <li>Line through origin: y = mx</li>
+      <li>Slope-Intercept: y = mx + c</li>
+      <li>Intercept form: x/a + y/b = 1</li>
+      <li>Point-Slope: y − y₁ = m(x − x₁)</li>
+      <li>Two-Point form: (y − y₁)/(y₂ − y₁) = (x − x₁)/(x₂ − x₁)</li>
+    </ul>
+  </section>
+
+  <!-- Section 6: Relationships Between Two Lines -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-indigo-500">
+    <h2 class="text-xl font-semibold mb-4">Relationships Between Two Lines</h2>
+    
+    <p class="font-mono mb-3">
+      Intersection of two lines:<br>
+      x = (b₁c₂ − b₂c₁) / (a₁b₂ − a₂b₁),<br>
+      y = (c₁a₂ − c₂a₁) / (a₁b₂ − a₂b₁)
+    </p>
+
+    <p class="font-mono mb-3">
+      Line through intersection: (a₁x + b₁y + c₁) + k(a₂x + b₂y + c₂) = 0
+    </p>
+
+    <p class="font-mono mb-3">
+      Angle between lines:<br>
+      tan θ = ± (m₁ − m₂) / (1 + m₁ m₂) = ± (a₂b₁ − a₁b₂)/(a₁a₂ + b₁b₂)
+    </p>
+
+    <p class="font-mono mb-3">
+      Parallel: m₁ = m₂ or a₁/a₂ = b₁/b₂<br>
+      Perpendicular: m₁ m₂ = −1 or a₁a₂ + b₁b₂ = 0
+    </p>
+
+    <p class="font-mono mb-3">
+      Line parallel to ax+by+c=0: ax + by + k = 0<br>
+      Line perpendicular to ax+by+c=0: bx − ay + k = 0
+    </p>
+
+    <p class="font-mono">
+      Concurrency of three lines: |a₁ b₁ c₁; a₂ b₂ c₂; a₃ b₃ c₃| = 0
+    </p>
+
+    <img src="line4.png" alt="Two lines interaction diagram" class="mt-3 rounded shadow">
+  </section>
+
+  <!-- Section 7: Position of Points & Bisectors -->
+  <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-teal-500">
+    <h2 class="text-xl font-semibold mb-4">Position of Points & Bisectors</h2>
+
+    <p class="font-mono mb-2">
+      Point (x₁,y₁) relative to line ax+by+c=0:<br>
+      ax₁ + by₁ + c > 0 → on one side<br>
+      ax₁ + by₁ + c < 0 → opposite side<br>
+      ax₁ + by₁ + c = 0 → on the line
+    </p>
+
+    <p class="font-mono mb-2">
+      Two points (x₁,y₁) & (x₂,y₂):<br>
+      (ax₁+by₁+c)/(ax₂+by₂+c) > 0 → same side<br>
+      (ax₁+by₁+c)/(ax₂+by₂+c) < 0 → opposite side
+    </p>
+
+    <p class="font-mono mb-2">
+      Distance from line: d = |ax₁ + by₁ + c| / √(a² + b²)
+    </p>
+
+    <p class="font-mono mb-3">
+      Angle bisectors of two lines:<br>
+      (a₁x + b₁y + c₁)/√(a₁²+b₁²) = ± (a₂x + b₂y + c₂)/√(a₂²+b₂²)
+    </p>
+
+    <p class="text-sm text-gray-700 mb-2">
+      Origin/Non-Origin Side: "+" → bisector containing origin, "−" → not containing origin
+    </p>
+    <p class="text-sm text-gray-700 mb-2">
+      Acute/Obtuse: If a₁a₂ + b₁b₂ > 0 → "+" is obtuse bisector<br>
+      If a₁a₂ + b₁b₂ < 0 → "+" is acute bisector
+    </p>
+
+    <img src="line5.png" alt="Angle bisector diagram" class="mt-3 rounded shadow">
+  </section>
+
+</body>
+</html>
