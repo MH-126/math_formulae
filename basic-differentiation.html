@@ -29,35 +29,201 @@
 
 <details class="mb-3">
 <summary class="cursor-pointer">\(\frac{d}{dx}(u \pm v) = \frac{du}{dx} \pm \frac{dv}{dx}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\frac{d}{dx}(u \pm v)
+= \lim_{h \to 0}
+\frac{(u(x+h) \pm v(x+h)) - (u(x) \pm v(x))}{h}
+\]
+
+\[
+= \lim_{h \to 0}
+\left[
+\frac{u(x+h) - u(x)}{h}
+\pm
+\frac{v(x+h) - v(x)}{h}
+\right]
+\]
+
+\[
+= \frac{du}{dx} \pm \frac{dv}{dx}
+\]
+
+</div>
 </details>
+
 
 <details class="mb-3">
 <summary class="cursor-pointer">\(\frac{d}{dx}(uv) = v\frac{du}{dx} + u\frac{dv}{dx}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\frac{d}{dx}(uv)
+=
+\lim_{h \to 0}
+\frac{u(x+h)v(x+h) - u(x)v(x)}{h}
+\]
+
+Add and subtract \(u(x+h)v(x)\):
+
+\[
+=
+\lim_{h \to 0}
+\frac{
+u(x+h)v(x+h) - u(x+h)v(x)
++ u(x+h)v(x) - u(x)v(x)
+}{h}
+\]
+
+\[
+=
+\lim_{h \to 0}
+\left[
+u(x+h)\frac{v(x+h)-v(x)}{h}
++
+v(x)\frac{u(x+h)-u(x)}{h}
+\right]
+\]
+
+\[
+= u\frac{dv}{dx} + v\frac{du}{dx}
+\]
+
+</div>
 </details>
+
 
 <details class="mb-4">
 <summary class="cursor-pointer">\(\frac{d}{dx}\left(\frac{u}{v}\right) = \frac{v\frac{du}{dx} - u\frac{dv}{dx}}{v^2}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\frac{d}{dx}\left(\frac{u}{v}\right)
+=
+\frac{d}{dx}\left(u v^{-1}\right)
+\]
+
+Using the product rule:
+
+\[
+=
+v^{-1}\frac{du}{dx}
++
+u\frac{d}{dx}\left(v^{-1}\right)
+\]
+
+\[
+=
+\frac{1}{v}\frac{du}{dx}
++
+u\left(-v^{-2}\frac{dv}{dx}\right)
+\]
+
+\[
+=
+\frac{1}{v}\frac{du}{dx}
+-
+\frac{u}{v^2}\frac{dv}{dx}
+\]
+
+\[
+=
+\frac{v\frac{du}{dx} - u\frac{dv}{dx}}{v^2}
+\]
+
+</div>
 </details>
+
 
 <div class="mt-4 bg-yellow-50 p-3 rounded">
 <strong>Chain Rule:</strong>
 <details class="mt-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}[f(g(x))] = f'(g(x))\cdot g'(x)\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\frac{dy}{dx}
+=
+\lim_{\Delta x \to 0}
+\frac{\Delta y}{\Delta x}
+\]
+
+Insert intermediate variable \(u = g(x)\):
+
+\[
+=
+\lim_{\Delta x \to 0}
+\left(
+\frac{\Delta y}{\Delta u}
+\cdot
+\frac{\Delta u}{\Delta x}
+\right)
+\]
+
+\[
+=
+\left(
+\lim_{\Delta u \to 0}
+\frac{\Delta y}{\Delta u}
+\right)
+\left(
+\lim_{\Delta x \to 0}
+\frac{\Delta u}{\Delta x}
+\right)
+\]
+
+\[
+=
+f'(g(x)) \cdot g'(x)
+\]
+
+</div>
 </details>
 </div>
+
 
 <div class="mt-3 bg-yellow-50 p-3 rounded">
 <strong>Variable Power Rule:</strong>
 <details class="mt-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(m^n) = m^n\frac{d}{dx}(n\ln m)\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = m^n\)
+
+\[
+\ln y = \ln(m^n)
+\]
+
+\[
+\ln y = n \ln m
+\]
+
+Differentiate implicitly:
+
+\[
+\frac{1}{y}\frac{dy}{dx}
+=
+\frac{d}{dx}(n \ln m)
+\]
+
+\[
+\frac{dy}{dx}
+=
+y \frac{d}{dx}(n \ln m)
+\]
+
+Substitute \(y = m^n\):
+
+\[
+\frac{d}{dx}(m^n)
+=
+m^n \frac{d}{dx}(n \ln m)
+\]
+
+</div>
 </details>
 </div>
-</section>
 
 <!-- Standard Derivatives -->
 <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-blue-500">
@@ -65,63 +231,306 @@
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(x^n) = n x^{n-1}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\frac{d}{dx}(x^n)
+=
+\lim_{h \to 0}
+\frac{(x+h)^n - x^n}{h}
+\]
+
+Using the binomial expansion:
+
+\[
+(x+h)^n
+=
+x^n + n x^{n-1}h + \frac{n(n-1)}{2}x^{n-2}h^2 + \cdots
+\]
+
+\[
+=
+\lim_{h \to 0}
+\frac{n x^{n-1}h + \frac{n(n-1)}{2}x^{n-2}h^2 + \cdots}{h}
+\]
+
+\[
+=
+\lim_{h \to 0}
+\left[
+n x^{n-1} + \frac{n(n-1)}{2}x^{n-2}h + \cdots
+\right]
+\]
+
+\[
+= n x^{n-1}
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\sin x) = \cos x\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\frac{d}{dx}(\sin x)
+=
+\lim_{h \to 0}
+\frac{\sin(x+h) - \sin x}{h}
+\]
+
+Using identity:
+\[
+\sin(x+h)=\sin x\cos h + \cos x\sin h
+\]
+
+\[
+=
+\sin x \lim_{h\to0}\frac{\cos h -1}{h}
++
+\cos x \lim_{h\to0}\frac{\sin h}{h}
+\]
+
+\[
+= \cos x
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\cos x) = -\sin x\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\cos x = \sin\left(\frac{\pi}{2} - x\right)
+\]
+
+Using chain rule:
+
+\[
+\frac{d}{dx}(\cos x)
+=
+\cos\left(\frac{\pi}{2} - x\right)(-1)
+\]
+
+\[
+= -\sin x
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\tan x) = \sec^2 x\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\tan x = \frac{\sin x}{\cos x}
+\]
+
+Using quotient rule:
+
+\[
+\frac{d}{dx}(\tan x)
+=
+\frac{\cos x(\cos x) - \sin x(-\sin x)}{\cos^2 x}
+\]
+
+\[
+=
+\frac{\cos^2 x + \sin^2 x}{\cos^2 x}
+=
+\frac{1}{\cos^2 x}
+=
+\sec^2 x
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\cot x) = -\csc^2 x\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\cot x = \frac{\cos x}{\sin x}
+\]
+
+\[
+=
+\frac{\sin x(-\sin x) - \cos x(\cos x)}{\sin^2 x}
+\]
+
+\[
+=
+-\frac{\sin^2 x + \cos^2 x}{\sin^2 x}
+=
+-\frac{1}{\sin^2 x}
+=
+-\csc^2 x
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\sec x) = \sec x \tan x\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\sec x = (\cos x)^{-1}
+\]
+
+\[
+=
+- (\cos x)^{-2}(-\sin x)
+=
+\frac{\sin x}{\cos^2 x}
+\]
+
+\[
+=
+\frac{1}{\cos x}\cdot\frac{\sin x}{\cos x}
+=
+\sec x \tan x
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\csc x) = -\csc x \cot x\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\csc x = (\sin x)^{-1}
+\]
+
+\[
+=
+- (\sin x)^{-2}(\cos x)
+=
+-\frac{\cos x}{\sin^2 x}
+\]
+
+\[
+=
+-\frac{1}{\sin x}\cdot\frac{\cos x}{\sin x}
+=
+-\csc x \cot x
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(e^x) = e^x\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\frac{d}{dx}(e^x)
+=
+\lim_{h\to0}
+\frac{e^{x+h} - e^x}{h}
+=
+e^x
+\lim_{h\to0}
+\frac{e^h - 1}{h}
+\]
+
+\[
+= e^x
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(a^x) = a^x \ln a\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = a^x\)
+
+\[
+\ln y = x\ln a
+\]
+
+\[
+\frac{1}{y}\frac{dy}{dx} = \ln a
+\]
+
+\[
+\frac{dy}{dx} = y\ln a = a^x \ln a
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\ln x) = \frac{1}{x}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = \ln x\)
+
+\[
+e^y = x
+\]
+
+\[
+e^y \frac{dy}{dx} = 1
+\]
+
+\[
+\frac{dy}{dx} = \frac{1}{e^y}
+=
+\frac{1}{x}
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\log_a x) = \frac{1}{x\ln a}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\log_a x = \frac{\ln x}{\ln a}
+\]
+
+\[
+\frac{d}{dx}(\log_a x)
+=
+\frac{1}{\ln a}\cdot\frac{1}{x}
+=
+\frac{1}{x\ln a}
+\]
+
+</div>
 </details>
 
 <details>
 <summary class="cursor-pointer">\(\frac{d}{dx}(\sqrt{x}) = \frac{1}{2\sqrt{x}}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+\[
+\sqrt{x} = x^{1/2}
+\]
+
+Using power rule:
+
+\[
+\frac{d}{dx}(x^{1/2})
+=
+\frac{1}{2}x^{-1/2}
+=
+\frac{1}{2\sqrt{x}}
+\]
+
+</div>
 </details>
+
 </section>
 
 <!-- Inverse Trigonometric -->
@@ -130,33 +539,174 @@
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\sin^{-1}x) = \frac{1}{\sqrt{1-x^2}}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = \sin^{-1}x\)
+
+\[
+\sin y = x
+\]
+
+Differentiate implicitly:
+
+\[
+\cos y \frac{dy}{dx} = 1
+\]
+
+\[
+\frac{dy}{dx} = \frac{1}{\cos y}
+\]
+
+Using identity \( \sin^2 y + \cos^2 y = 1 \):
+
+\[
+\cos y = \sqrt{1 - \sin^2 y} = \sqrt{1 - x^2}
+\]
+
+\[
+\frac{d}{dx}(\sin^{-1}x) = \frac{1}{\sqrt{1-x^2}}
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\cos^{-1}x) = -\frac{1}{\sqrt{1-x^2}}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = \cos^{-1}x\)
+
+\[
+\cos y = x
+\]
+
+\[
+-\sin y \frac{dy}{dx} = 1
+\]
+
+\[
+\frac{dy}{dx} = -\frac{1}{\sin y}
+\]
+
+\[
+\sin y = \sqrt{1 - \cos^2 y} = \sqrt{1 - x^2}
+\]
+
+\[
+\frac{d}{dx}(\cos^{-1}x) = -\frac{1}{\sqrt{1-x^2}}
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\tan^{-1}x) = \frac{1}{1+x^2}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = \tan^{-1}x\)
+
+\[
+\tan y = x
+\]
+
+\[
+\sec^2 y \frac{dy}{dx} = 1
+\]
+
+\[
+\frac{dy}{dx} = \frac{1}{\sec^2 y}
+\]
+
+Since \( \sec^2 y = 1 + \tan^2 y = 1 + x^2 \),
+
+\[
+\frac{d}{dx}(\tan^{-1}x) = \frac{1}{1+x^2}
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\cot^{-1}x) = -\frac{1}{1+x^2}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = \cot^{-1}x\)
+
+\[
+\cot y = x
+\]
+
+\[
+-\csc^2 y \frac{dy}{dx} = 1
+\]
+
+\[
+\frac{dy}{dx} = -\frac{1}{\csc^2 y}
+\]
+
+Since \( \csc^2 y = 1 + \cot^2 y = 1 + x^2 \),
+
+\[
+\frac{d}{dx}(\cot^{-1}x) = -\frac{1}{1+x^2}
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\frac{d}{dx}(\sec^{-1}x) = \frac{1}{x\sqrt{x^2-1}}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = \sec^{-1}x\)
+
+\[
+\sec y = x
+\]
+
+\[
+\sec y \tan y \frac{dy}{dx} = 1
+\]
+
+\[
+\frac{dy}{dx} = \frac{1}{\sec y \tan y}
+\]
+
+Since \( \tan y = \sqrt{\sec^2 y - 1} = \sqrt{x^2 - 1} \) and \( \sec y = x \),
+
+\[
+\frac{d}{dx}(\sec^{-1}x) = \frac{1}{x\sqrt{x^2-1}}
+\]
+
+</div>
 </details>
 
 <details>
 <summary class="cursor-pointer">\(\frac{d}{dx}(\csc^{-1}x) = -\frac{1}{x\sqrt{x^2-1}}\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Let \(y = \csc^{-1}x\)
+
+\[
+\csc y = x
+\]
+
+\[
+-\csc y \cot y \frac{dy}{dx} = 1
+\]
+
+\[
+\frac{dy}{dx} = -\frac{1}{\csc y \cot y}
+\]
+
+Since \( \cot y = \sqrt{\csc^2 y - 1} = \sqrt{x^2 - 1} \) and \( \csc y = x \),
+
+\[
+\frac{d}{dx}(\csc^{-1}x) = -\frac{1}{x\sqrt{x^2-1}}
+\]
+
+</div>
 </details>
+
 </section>
 
 <!-- Hyperbolic -->
@@ -165,33 +715,152 @@
 
   <details class="mb-2">
     <summary class="cursor-pointer">\(\frac{d}{dx}(\sinh x) = \cosh x\)</summary>
-    <div class="mt-3 text-sm text-gray-600"></div>
+    <div class="mt-3 text-sm text-gray-600">
+
+\[
+\sinh x = \frac{e^x - e^{-x}}{2}
+\]
+
+\[
+\frac{d}{dx}(\sinh x)
+=
+\frac{e^x - (-e^{-x})}{2}
+=
+\frac{e^x + e^{-x}}{2}
+=
+\cosh x
+\]
+
+    </div>
   </details>
 
   <details class="mb-2">
     <summary class="cursor-pointer">\(\frac{d}{dx}(\cosh x) = \sinh x\)</summary>
-    <div class="mt-3 text-sm text-gray-600"></div>
+    <div class="mt-3 text-sm text-gray-600">
+
+\[
+\cosh x = \frac{e^x + e^{-x}}{2}
+\]
+
+\[
+\frac{d}{dx}(\cosh x)
+=
+\frac{e^x + (-e^{-x})}{2}
+=
+\frac{e^x - e^{-x}}{2}
+=
+\sinh x
+\]
+
+    </div>
   </details>
 
   <details class="mb-2">
     <summary class="cursor-pointer">\(\frac{d}{dx}(\tanh x) = \operatorname{sech}^2 x\)</summary>
-    <div class="mt-3 text-sm text-gray-600"></div>
+    <div class="mt-3 text-sm text-gray-600">
+
+\[
+\tanh x = \frac{\sinh x}{\cosh x}
+\]
+
+Using quotient rule:
+
+\[
+\frac{d}{dx}(\tanh x)
+=
+\frac{\cosh x(\cosh x) - \sinh x(\sinh x)}{\cosh^2 x}
+\]
+
+\[
+=
+\frac{\cosh^2 x - \sinh^2 x}{\cosh^2 x}
+=
+\frac{1}{\cosh^2 x}
+=
+\operatorname{sech}^2 x
+\]
+
+    </div>
   </details>
 
   <details class="mb-2">
     <summary class="cursor-pointer">\(\frac{d}{dx}(\coth x) = -\operatorname{csch}^2 x\)</summary>
-    <div class="mt-3 text-sm text-gray-600"></div>
+    <div class="mt-3 text-sm text-gray-600">
+
+\[
+\coth x = \frac{\cosh x}{\sinh x}
+\]
+
+\[
+\frac{d}{dx}(\coth x)
+=
+\frac{\sinh x(\sinh x) - \cosh x(\cosh x)}{\sinh^2 x}
+\]
+
+\[
+=
+\frac{\sinh^2 x - \cosh^2 x}{\sinh^2 x}
+=
+-\frac{1}{\sinh^2 x}
+=
+-\operatorname{csch}^2 x
+\]
+
+    </div>
   </details>
 
   <details class="mb-2">
     <summary class="cursor-pointer">\(\frac{d}{dx}(\operatorname{sech} x) = -\operatorname{sech} x \,\tanh x\)</summary>
-    <div class="mt-3 text-sm text-gray-600"></div>
+    <div class="mt-3 text-sm text-gray-600">
+
+\[
+\operatorname{sech} x = \frac{1}{\cosh x}
+\]
+
+\[
+\frac{d}{dx}(\operatorname{sech} x)
+=
+-(\cosh x)^{-2}(\sinh x)
+=
+-\frac{\sinh x}{\cosh^2 x}
+\]
+
+\[
+=
+-\left(\frac{1}{\cosh x}\right)\left(\frac{\sinh x}{\cosh x}\right)
+=
+-\operatorname{sech} x \,\tanh x
+\]
+
+    </div>
   </details>
 
   <details>
     <summary class="cursor-pointer">\(\frac{d}{dx}(\operatorname{csch} x) = -\operatorname{csch} x \,\coth x\)</summary>
-    <div class="mt-3 text-sm text-gray-600"></div>
+    <div class="mt-3 text-sm text-gray-600">
+
+\[
+\operatorname{csch} x = \frac{1}{\sinh x}
+\]
+
+\[
+\frac{d}{dx}(\operatorname{csch} x)
+=
+-(\sinh x)^{-2}(\cosh x)
+=
+-\frac{\cosh x}{\sinh^2 x}
+\]
+
+\[
+=
+-\left(\frac{1}{\sinh x}\right)\left(\frac{\cosh x}{\sinh x}\right)
+=
+-\operatorname{csch} x \,\coth x
+\]
+
+    </div>
   </details>
+
 </section>
 <!-- Tangent and Normal -->
 <section class="mb-8 p-6 bg-white rounded shadow border-l-4 border-purple-500">
@@ -199,24 +868,112 @@
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\text{Tangent: } y-y_1 = \frac{dy}{dx}(x-x_1)\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Definition: The tangent line at \((x_1,y_1)\) has slope
+
+\[
+m = \left.\frac{dy}{dx}\right|_{x=x_1}
+\]
+
+Using point-slope form of a line:
+
+\[
+y - y_1 = m(x - x_1)
+\]
+
+Substitute \(m = \frac{dy}{dx}\):
+
+\[
+y - y_1 = \frac{dy}{dx}(x - x_1)
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\text{Normal: } y-y_1 = -\frac{1}{\frac{dy}{dx}}(x-x_1)\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Definition: The normal line is perpendicular to the tangent at \((x_1,y_1)\).
+
+If tangent slope is
+
+\[
+m = \frac{dy}{dx}
+\]
+
+Then perpendicular slope is
+
+\[
+m' = -\frac{1}{m} = -\frac{1}{\frac{dy}{dx}}
+\]
+
+Using point-slope form:
+
+\[
+y - y_1 = m'(x - x_1)
+\]
+
+\[
+y - y_1 = -\frac{1}{\frac{dy}{dx}}(x - x_1)
+\]
+
+</div>
 </details>
 
 <details class="mb-2">
 <summary class="cursor-pointer">\(\text{Parallel to x-axis } \Rightarrow \frac{dy}{dx}=0\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
+<div class="mt-3 text-sm text-gray-600">
+
+Slope of the x-axis:
+
+\[
+m = 0
+\]
+
+For a tangent to be parallel to the x-axis:
+
+\[
+\frac{dy}{dx} = 0
+\]
+
+</div>
 </details>
 
 <details>
 <summary class="cursor-pointer">\(\text{Equal angles with axes } \Rightarrow \frac{dy}{dx}=\pm1\)</summary>
-<div class="mt-3 text-sm text-gray-600"></div>
-</details>
-</section>
+<div class="mt-3 text-sm text-gray-600">
 
+If a line makes equal angles with both axes:
+
+\[
+\theta = 45^\circ \text{ or } 135^\circ
+\]
+
+Slope definition:
+
+\[
+m = \tan\theta
+\]
+
+\[
+\tan 45^\circ = 1
+\]
+
+\[
+\tan 135^\circ = -1
+\]
+
+Therefore,
+
+\[
+\frac{dy}{dx} = \pm 1
+\]
+
+</div>
+</details>
+
+</section>
 </body>
 </html>
